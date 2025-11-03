@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "src/index.html", "use": "@vercel/static" },
+    { "src": "dist/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/src/index.html" },
+    { "src": "/widget\\.v1\\.min\\.js", "dest": "/dist/widget.v1.min.js", "headers": { "cache-control": "public, max-age=31536000, immutable" } }
+  ]
+}
+
+
